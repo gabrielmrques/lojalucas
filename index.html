@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CORRE® — Roupa larga pra quem vive na rua</title>
+  <meta name="description" content="CORRE® — streetwear e skate. Roupa larga, tecido pesado e caimento do jeito que a rua pede." />
+  <meta name="theme-color" content="#0c0c0b" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__top mono">
+      <span>CORRE® / Drop 004</span>
+      <span>São Paulo — SP</span>
+    </div>
+    <div class="loader__word">
+      <span>C</span><span>O</span><span>R</span><span>R</span><span>E</span>
+    </div>
+    <div class="loader__bottom mono">
+      <span>Esquentando o asfalto</span>
+      <span class="loader__count">000</span>
+    </div>
+    <div class="loader__bar"><i></i></div>
+  </div>
+
+  <!-- ============ UI CHROME ============ -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><span class="cursor__label">Ver</span></div>
+
+  <header class="nav is-hidden">
+    <a href="#top" class="nav__logo" aria-label="CORRE início">CORRE<sup>®</sup></a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#drop" class="link-roll"><span data-text="Drop 004">Drop 004</span></a>
+      <a href="#categorias" class="link-roll"><span data-text="Categorias">Categorias</span></a>
+      <a href="#lookbook" class="link-roll"><span data-text="Lookbook">Lookbook</span></a>
+      <a href="#crew" class="link-roll"><span data-text="Crew">Crew</span></a>
+    </nav>
+    <div class="nav__right">
+      <span class="nav__time mono"><i class="dot"></i> SP <span class="js-clock">00:00</span></span>
+      <a href="loja.html" class="btn btn--pill" data-cursor="Loja">
+        <span>Entrar na loja</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__meta mono">
+        <span class="reveal-line"><span>(Inverno 26)</span></span>
+        <span class="reveal-line"><span>Coleção Concreto</span></span>
+        <span class="reveal-line"><span>Drop 004 — tá no ar</span></span>
+      </div>
+
+      <div class="hero__media" data-cursor="Drop">
+        <div class="hero__img-wrap">
+          <img src="https://images.unsplash.com/photo-1547447134-cd3f5c716030?auto=format&fit=crop&w=1400&q=80" alt="Skate encostado no muro" class="hero__img" />
+        </div>
+        <span class="hero__tag mono">↳ Moletom Pesadão 480g — o queridinho da crew</span>
+      </div>
+
+      <h1 class="hero__title js-fit" aria-label="CORRE">
+        <span class="hero__char">C</span><span class="hero__char">O</span><span class="hero__char">R</span><span class="hero__char">R</span><span class="hero__char">E</span>
+      </h1>
+
+      <div class="hero__bottom">
+        <p class="hero__lede">
+          <em>Roupa larga</em> pra quem vive na rua. Moletom que aguenta tombo, calça que deixa a perna respirar e camiseta que não encolhe na primeira lavada.
+        </p>
+        <a href="loja.html" class="btn btn--big magnetic" data-cursor="Bora">
+          <span class="btn__fill"></span>
+          <span class="btn__text">Bora pra loja</span>
+          <span class="btn__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <div class="hero__scroll mono">
+          <span>Desce</span>
+          <i></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee marquee--accent" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Frete na faixa acima de R$ 299</span><b>✦</b>
+        <span>Pagou no Pix, ganhou 5%</span><b>✦</b>
+        <span>Divide em 6x sem juros</span><b>✦</b>
+        <span>Não serviu? A gente troca</span><b>✦</b>
+        <span>Drop 004 tá no ar</span><b>✦</b>
+        <span>Frete na faixa acima de R$ 299</span><b>✦</b>
+        <span>Pagou no Pix, ganhou 5%</span><b>✦</b>
+        <span>Divide em 6x sem juros</span><b>✦</b>
+        <span>Não serviu? A gente troca</span><b>✦</b>
+        <span>Drop 004 tá no ar</span><b>✦</b>
+      </div>
+    </div>
+
+    <!-- ============ MANIFESTO ============ -->
+    <section class="manifesto">
+      <div class="manifesto__side mono">
+        <span>(01)</span>
+        <span>Papo reto</span>
+      </div>
+      <p class="manifesto__text js-words">
+        A gente não liga pra tendência. Liga pra quem desce ladeira de shape, pega o busão das seis e faz do
+        <em>concreto</em> ponto de encontro. Por isso a roupa é larga, o tecido é pesado e o caimento é do jeito que a rua pede.
+      </p>
+      <div class="manifesto__stats">
+        <div class="stat">
+          <span class="stat__num"><span class="js-count" data-to="480">0</span><small>g</small></span>
+          <span class="stat__label mono">De moletom, sem frescura</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num"><span class="js-count" data-to="100">0</span><small>%</small></span>
+          <span class="stat__label mono">Algodão de verdade</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num"><span class="js-count" data-to="12">0</span><small>k+</small></span>
+          <span class="stat__label mono">Gente na crew</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DROP (HORIZONTAL) ============ -->
+    <section class="drop" id="drop">
+      <div class="drop__pin">
+        <div class="drop__head">
+          <div>
+            <span class="eyebrow mono">(02) — Acabou de chegar</span>
+            <h2 class="section-title">Coleção <em>Concreto</em></h2>
+          </div>
+          <div class="drop__progress mono">
+            <span class="js-drop-index">01</span>
+            <span class="drop__bar"><i class="js-drop-bar"></i></span>
+            <span>06</span>
+          </div>
+        </div>
+
+        <div class="drop__track">
+          <article class="product" data-cursor="Ver">
+            <a href="produto.html?id=moletom-pesadao" class="product__link">
+              <div class="product__media">
+                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=80" alt="Moletom Pesadão cinza" loading="lazy" />
+                <span class="product__badge mono">Novo</span>
+                <div class="product__sizes mono"><span>P</span><span>M</span><span>G</span><span>GG</span><span>XG</span></div>
+              </div>
+              <div class="product__info">
+                <div>
+                  <h3>Moletom Pesadão 480g</h3>
+                  <p class="mono">Largão · Cinza mescla</p>
+                </div>
+                <span class="product__price">R$ 389</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="product" data-cursor="Ver">
+            <a href="produto.html?id=tee-oversized-preta" class="product__link">
+              <div class="product__media">
+                <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=900&q=80" alt="Camiseta oversized preta" loading="lazy" />
+                <span class="product__badge mono">Todo mundo quer</span>
+                <div class="product__sizes mono"><span>P</span><span>M</span><span>G</span><span>GG</span><span>XG</span></div>
+              </div>
+              <div class="product__info">
+                <div>
+                  <h3>Tee Oversized Breu</h3>
+                  <p class="mono">Malha 260g · Preta</p>
+                </div>
+                <span class="product__price">R$ 179</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="product" data-cursor="Ver">
+            <a href="produto.html?id=calca-baggy-jeans" class="product__link">
+              <div class="product__media">
+                <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=900&q=80" alt="Calça jeans baggy" loading="lazy" />
+                <span class="product__badge mono">Baggy</span>
+                <div class="product__sizes mono"><span>38</span><span>40</span><span>42</span><span>44</span><span>46</span></div>
+              </div>
+              <div class="product__info">
+                <div>
+                  <h3>Calça Baggy Jeans 14oz</h3>
+                  <p class="mono">Perna larga · Azul lavado</p>
+                </div>
+                <span class="product__price">R$ 349</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="product" data-cursor="Ver">
+            <a href="produto.html?id=tee-boxy-osso" class="product__link">
+              <div class="product__media">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80" alt="Camiseta boxy off-white" loading="lazy" />
+                <span class="product__badge mono">Básica que salva</span>
+                <div class="product__sizes mono"><span>P</span><span>M</span><span>G</span><span>GG</span><span>XG</span></div>
+              </div>
+              <div class="product__info">
+                <div>
+                  <h3>Tee Boxy Osso</h3>
+                  <p class="mono">Malha 260g · Off-white</p>
+                </div>
+                <span class="product__price">R$ 169</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="product" data-cursor="Ver">
+            <a href="produto.html?id=tenis-low-rua" class="product__link">
+              <div class="product__media">
+                <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=900&q=80" alt="Tênis de cano baixo" loading="lazy" />
+                <span class="product__badge mono">Collab</span>
+                <div class="product__sizes mono"><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span></div>
+              </div>
+              <div class="product__info">
+                <div>
+                  <h3>Tênis Low Rua</h3>
+                  <p class="mono">Couro · Vermelho e preto</p>
+                </div>
+                <span class="product__price">R$ 459</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="product" data-cursor="Ver">
+            <a href="produto.html?id=tee-farol" class="product__link">
+              <div class="product__media">
+                <img src="https://images.unsplash.com/photo-1564859228273-274232fdb516?auto=format&fit=crop&w=900&q=80" alt="Camiseta estampada off-white" loading="lazy" />
+                <span class="product__badge mono">Tiragem curta</span>
+                <div class="product__sizes mono"><span>P</span><span>M</span><span>G</span><span>GG</span><span>XG</span></div>
+              </div>
+              <div class="product__info">
+                <div>
+                  <h3>Tee Farol</h3>
+                  <p class="mono">Silk feito à mão · Osso</p>
+                </div>
+                <span class="product__price">R$ 199</span>
+              </div>
+            </a>
+          </article>
+
+          <a href="loja.html" class="drop__end" data-cursor="Bora">
+            <span class="mono">(+ um monte de peça)</span>
+            <span class="drop__end-title">Ver tudo<br /><em>que chegou</em></span>
+            <span class="drop__end-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CATEGORIAS ============ -->
+    <section class="cats" id="categorias">
+      <div class="cats__head">
+        <span class="eyebrow mono">(03) — Categorias</span>
+        <h2 class="section-title">Monta teu <em>kit</em></h2>
+      </div>
+
+      <div class="cats__grid">
+        <a href="loja.html?cat=moletons" class="cat cat--a" data-cursor="Abrir">
+          <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1200&q=80" alt="Moletons" loading="lazy" />
+          <div class="cat__overlay"></div>
+          <div class="cat__info">
+            <span class="mono">01 — Pra quando esfria</span>
+            <h3>Moletons</h3>
+          </div>
+          <span class="cat__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg></span>
+        </a>
+        <a href="loja.html?cat=camisetas" class="cat cat--b" data-cursor="Abrir">
+          <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=1000&q=80" alt="Camisetas" loading="lazy" />
+          <div class="cat__overlay"></div>
+          <div class="cat__info">
+            <span class="mono">02 — Do dia a dia</span>
+            <h3>Camisetas</h3>
+          </div>
+          <span class="cat__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg></span>
+        </a>
+        <a href="loja.html?cat=calcas" class="cat cat--c" data-cursor="Abrir">
+          <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1000&q=80" alt="Calças baggy" loading="lazy" />
+          <div class="cat__overlay"></div>
+          <div class="cat__info">
+            <span class="mono">03 — Larguinhas</span>
+            <h3>Calças Baggy</h3>
+          </div>
+          <span class="cat__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg></span>
+        </a>
+        <a href="loja.html?cat=skate" class="cat cat--d" data-cursor="Abrir">
+          <img src="https://images.unsplash.com/photo-1520045892732-304bc3ac5d8e?auto=format&fit=crop&w=1000&q=80" alt="Skate e acessórios" loading="lazy" />
+          <div class="cat__overlay"></div>
+          <div class="cat__info">
+            <span class="mono">04 — Shape, tênis e afins</span>
+            <h3>Skate &amp; Acessórios</h3>
+          </div>
+          <span class="cat__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ LOOKBOOK ============ -->
+    <section class="look" id="lookbook">
+      <div class="look__sticky">
+        <span class="eyebrow mono">(04) — Lookbook Inverno 26</span>
+        <h2 class="look__title">
+          <span class="reveal-line"><span>Feito</span></span>
+          <span class="reveal-line"><span><em>pra rua,</em></span></span>
+          <span class="reveal-line"><span>não pra</span></span>
+          <span class="reveal-line"><span>vitrine.</span></span>
+        </h2>
+        <p class="look__text">A gente fotografou tudo no centrão de SP, entre uma manobra e outra. Sem estúdio, sem pose ensaiada — só a crew e o concreto.</p>
+        <a href="loja.html" class="link-arrow" data-cursor="Bora">Quero esses looks <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+
+      <div class="look__gallery">
+        <figure class="look__item look__item--1" data-speed="0.12">
+          <div class="look__img"><img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1000&q=80" alt="Look de rua 01" loading="lazy" /></div>
+          <figcaption class="mono"><span>Look 01</span><span>Corta-vento + Baggy</span></figcaption>
+        </figure>
+        <figure class="look__item look__item--2" data-speed="-0.08">
+          <div class="look__img"><img src="https://images.unsplash.com/photo-1531565637446-32307b194362?auto=format&fit=crop&w=1000&q=80" alt="Look de rua 02" loading="lazy" /></div>
+          <figcaption class="mono"><span>Look 02</span><span>Cruiser na faixa</span></figcaption>
+        </figure>
+        <figure class="look__item look__item--3" data-speed="0.1">
+          <div class="look__img"><img src="https://images.unsplash.com/photo-1509942774463-acf339cf87d5?auto=format&fit=crop&w=1000&q=80" alt="Look de rua 03" loading="lazy" /></div>
+          <figcaption class="mono"><span>Look 03</span><span>Moletom Fumaça</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ BENEFÍCIOS ============ -->
+    <section class="perks">
+      <div class="perk">
+        <span class="perk__n mono">01</span>
+        <h4>Frete na faixa</h4>
+        <p>Comprou acima de R$ 299? O frete é por nossa conta, pra qualquer canto do Brasil.</p>
+      </div>
+      <div class="perk">
+        <span class="perk__n mono">02</span>
+        <h4>Trocou, tá trocado</h4>
+        <p>Não serviu? A primeira troca é por nossa conta, em até 30 dias. Sem burocracia.</p>
+      </div>
+      <div class="perk">
+        <span class="perk__n mono">03</span>
+        <h4>6x sem juros</h4>
+        <p>Ou 5% de desconto se pagar no Pix. Você escolhe o que pesa menos.</p>
+      </div>
+      <div class="perk">
+        <span class="perk__n mono">04</span>
+        <h4>Sai no mesmo dia</h4>
+        <p>Pediu até as 14h? A gente embala e despacha no mesmo dia útil.</p>
+      </div>
+    </section>
+
+    <!-- ============ CREW ============ -->
+    <section class="crew" id="crew">
+      <div class="crew__head">
+        <span class="eyebrow mono">(05) — A crew fala</span>
+        <h2 class="section-title">Quem usa, <em>aprova.</em></h2>
+      </div>
+
+      <div class="quotes">
+        <blockquote class="quote">
+          <p>“Mano, primeira calça que aguentou três meses de pista sem abrir o joelho. E o caimento é absurdo.”</p>
+          <footer class="mono"><span class="quote__avatar">RM</span> Rafa M. — Anda de skate na ZL</footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>“O moletom é pesado de verdade. Daqueles que você pega na mão e já sente que vai durar anos.”</p>
+          <footer class="mono"><span class="quote__avatar">JS</span> Ju S. — Fotógrafa de rua</footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>“Chegou em dois dias, com bilhetinho escrito à mão. Já tô de olho no próximo drop.”</p>
+          <footer class="mono"><span class="quote__avatar">TK</span> Thiago K. — Tá com a gente desde o Drop 001</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============ CTA FINAL ============ -->
+    <section class="cta">
+      <div class="cta__badge" aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <defs><path id="circle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" /></defs>
+          <text><textPath href="#circle">LOJA ABERTA • DROP 004 • FRETE NA FAIXA • LOJA ABERTA • DROP 004 • </textPath></text>
+        </svg>
+        <span class="cta__star">✦</span>
+      </div>
+
+      <span class="eyebrow mono">(06) — A loja tá aberta</span>
+      <a href="loja.html" class="cta__title" data-cursor="Bora">
+        <span class="cta__line"><span class="cta__word">Bora</span></span>
+        <span class="cta__line"><span class="cta__word"><em>pra</em> loja</span></span>
+      </a>
+      <p class="cta__sub">O Drop 004 é limitado. Quando acaba, acabou — não tem reposição.</p>
+
+      <form class="news" onsubmit="event.preventDefault(); this.classList.add('is-done');">
+        <label for="email" class="mono">Quer saber do próximo drop antes de todo mundo?</label>
+        <div class="news__row">
+          <input id="email" type="email" placeholder="seu@email.com" required />
+          <button type="submit" class="mono" data-cursor="Bora">Me avisa <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+        <span class="news__ok mono">✦ Tá na lista! Fica de olho no e-mail.</span>
+      </form>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <span class="mono footer__label">Loja</span>
+        <a href="loja.html">Acabou de chegar</a>
+        <a href="loja.html?cat=moletons">Moletons</a>
+        <a href="loja.html?cat=camisetas">Camisetas</a>
+        <a href="loja.html?cat=calcas">Calças</a>
+        <a href="loja.html?cat=skate">Skate</a>
+      </div>
+      <div class="footer__col">
+        <span class="mono footer__label">Ajuda</span>
+        <a href="#">Trocas e devoluções</a>
+        <a href="#">Guia de medidas</a>
+        <a href="conta.html">Meus pedidos</a>
+        <a href="#">Chama no Whats</a>
+      </div>
+      <div class="footer__col">
+        <span class="mono footer__label">Segue a gente</span>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">YouTube</a>
+      </div>
+      <div class="footer__col footer__col--end">
+        <span class="mono footer__label">Voltar</span>
+        <a href="#top" class="footer__top" data-cursor="Topo">↑ Lá pra cima</a>
+      </div>
+    </div>
+    <div class="footer__word js-fit" aria-hidden="true">CORRE<sup>®</sup></div>
+    <div class="footer__bottom mono">
+      <span>© 2026 CORRE® — Faz teu corre</span>
+      <span>Feito na rua — São Paulo, SP</span>
+      <span>Pix · Cartão · Boleto</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
