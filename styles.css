@@ -1,17 +1,17 @@
 /* =========================================================
-   CORRE® — Streetwear landing
+   NORD COMPANY© — Streetwear landing
    ========================================================= */
 
 :root {
-  --ink: #0c0c0b;
-  --ink-2: #161614;
-  --ink-3: #22221f;
-  --bone: #ece7dd;
-  --bone-2: #ddd6c9;
-  --stone: #8b867c;
-  --signal: #ff4d1c;
-  --line-dark: rgba(236, 231, 221, 0.14);
-  --line-light: rgba(12, 12, 11, 0.14);
+  --ink: #111827;
+  --ink-2: #1a2233;
+  --ink-3: #252f42;
+  --bone: #ffffff;
+  --bone-2: #e5e7eb;
+  --stone: #6b7280;
+  --signal: #00cfe8;
+  --line-dark: rgba(255, 255, 255, 0.14);
+  --line-light: rgba(17, 24, 39, 0.14);
 
   --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --f-serif: "Instrument Serif", "Times New Roman", serif;
@@ -128,7 +128,7 @@ em { font-family: var(--f-serif); font-style: italic; font-weight: 400; letter-s
 .loader__count { color: var(--bone); font-size: 13px; }
 .loader__word {
   display: flex; justify-content: center; overflow: hidden;
-  font-size: clamp(80px, 17vw, 280px);
+  font-size: clamp(36px, 7.4vw, 130px);
   font-weight: 900; font-variation-settings: "wdth" 125;
   line-height: 0.85; letter-spacing: -0.05em;
 }
@@ -146,7 +146,7 @@ em { font-family: var(--f-serif); font-style: italic; font-weight: 400; letter-s
   transition: transform 0.6s var(--ease), background 0.4s, backdrop-filter 0.4s;
 }
 .nav.is-scrolled {
-  background: rgba(12, 12, 11, 0.62);
+  background: rgba(17, 24, 39, 0.62);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid var(--line-dark);
@@ -270,7 +270,6 @@ em { font-family: var(--f-serif); font-style: italic; font-weight: 400; letter-s
   line-height: 0.76;
   letter-spacing: -0.06em;
   color: var(--bone);
-  mix-blend-mode: difference;
   overflow: hidden;
   padding-top: 0.06em;
   margin-left: -0.03em;
@@ -278,6 +277,7 @@ em { font-family: var(--f-serif); font-style: italic; font-weight: 400; letter-s
   pointer-events: none;
 }
 .hero__char { display: inline-block; transform: translateY(105%); }
+.hero__mark, .loader__mark { font-size: 0.32em; font-weight: 500; align-self: flex-start; margin-left: 0.04em; padding-right: 0.12em; letter-spacing: 0; }
 
 .hero__bottom {
   position: relative; z-index: 3;
@@ -397,7 +397,7 @@ em { font-family: var(--f-serif); font-style: italic; font-weight: 400; letter-s
 }
 .product__sizes span {
   flex: 1; text-align: center; padding: 10px 0;
-  background: rgba(236, 231, 221, 0.86); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.86); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   border-radius: 3px; font-size: 10.5px;
   transition: background 0.25s, color 0.25s;
 }
@@ -456,7 +456,7 @@ em { font-family: var(--f-serif); font-style: italic; font-weight: 400; letter-s
   transition: transform 1.4s var(--ease), filter 0.8s;
 }
 .cat:hover img { transform: scale(1.12); filter: grayscale(0.1) contrast(1.05) brightness(0.9); }
-.cat__overlay { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(12,12,11,0) 40%, rgba(12,12,11,0.75) 100%); }
+.cat__overlay { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(17,24,39,0) 40%, rgba(17,24,39,0.75) 100%); }
 .cat__info { position: absolute; left: 22px; bottom: 20px; right: 90px; }
 .cat__info .mono { color: var(--bone-2); }
 .cat__info h3 {
@@ -546,7 +546,7 @@ em { font-family: var(--f-serif); font-style: italic; font-weight: 400; letter-s
   min-height: 300px;
   transition: translate 0.6s var(--ease), border-color 0.4s;
 }
-.quote:hover { translate: 0 -6px; border-color: rgba(255, 77, 28, 0.5); }
+.quote:hover { translate: 0 -6px; border-color: rgba(0, 207, 232, 0.5); }
 .quote p { font-family: var(--f-serif); font-size: clamp(24px, 2.1vw, 32px); line-height: 1.12; letter-spacing: -0.01em; }
 .quote footer { display: flex; align-items: center; gap: 12px; color: var(--stone); }
 .quote__avatar {
@@ -592,7 +592,7 @@ em { font-family: var(--f-serif); font-style: italic; font-weight: 400; letter-s
 .news label { display: block; margin-bottom: 12px; }
 .news__row { display: flex; border-bottom: 1.5px solid var(--ink); }
 .news input { flex: 1; min-width: 0; padding: 14px 0; font-size: 20px; font-weight: 500; letter-spacing: -0.02em; }
-.news input::placeholder { color: rgba(12, 12, 11, 0.45); }
+.news input::placeholder { color: rgba(17, 24, 39, 0.45); }
 .news button { display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: 500; padding-left: 12px; }
 .news button svg { transition: transform 0.5s var(--ease); }
 .news button:hover svg { transform: translateX(5px); }
@@ -611,7 +611,7 @@ em { font-family: var(--f-serif); font-style: italic; font-weight: 400; letter-s
 .footer__col a:hover { color: var(--signal); }
 .footer__top { font-weight: 600; }
 .footer__word {
-  font-size: 27vw; font-weight: 900; font-variation-settings: "wdth" 125;
+  font-size: 11.5vw; font-weight: 900; font-variation-settings: "wdth" 125;
   line-height: 0.74; letter-spacing: -0.065em;
   margin: clamp(60px, 8vw, 120px) -0.03em 0;
   color: var(--ink-3);

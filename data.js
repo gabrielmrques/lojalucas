@@ -1,5 +1,5 @@
 /* =========================================================
-   CORRE® — catálogo (dados de demonstração)
+   NORD COMPANY© — catálogo (dados de demonstração)
    ========================================================= */
 
 const IMG = (id, w = 1000) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
