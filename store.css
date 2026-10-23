@@ -13,7 +13,7 @@ body.store {
 body.store .grain { opacity: 0.05; }
 body.has-layer { overflow: hidden; }
 .store-main { min-height: 70vh; }
-.store .section-title em { color: var(--signal); }
+.store .section-title em { color: var(--ink); }
 
 /* ---------- Botões ---------- */
 .btn-solid, .btn-ghost {
@@ -280,7 +280,7 @@ body.layer-search .scrim { opacity: 1; }
   line-height: 0.8; letter-spacing: -0.06em; text-transform: uppercase;
   animation: heroIn 1.1s var(--ease) both;
 }
-.shop-hero__title em { text-transform: none; color: var(--signal); font-weight: 400; letter-spacing: -0.04em; font-size: 1.05em; }
+.shop-hero__title em { text-transform: none; color: var(--ink); font-weight: 400; letter-spacing: -0.04em; font-size: 1.05em; }
 @keyframes heroIn { from { opacity: 0; transform: translateY(40px); } }
 .shop-hero__side { max-width: 330px; display: grid; gap: 12px; padding-bottom: 8px; animation: heroIn 1.1s 0.1s var(--ease) both; }
 .shop-hero__side p { font-size: 15px; line-height: 1.45; }
