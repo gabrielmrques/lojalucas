@@ -30,9 +30,28 @@ const fitText = () => {
   });
   window.ScrollTrigger?.refresh();
 };
+// ---------- Hero hotspots: keep them pinned to the photo under object-fit: cover ----------
+const placeSpots = () => {
+  const img = $(".hero__img");
+  if (!img?.naturalWidth) return;
+  const box = img.parentElement;
+  const w = box.clientWidth, h = box.clientHeight;
+  const s = Math.max(w / img.naturalWidth, h / img.naturalHeight);
+  const iw = img.naturalWidth * s, ih = img.naturalHeight * s;
+  const ox = (w - iw) * 0.5, oy = (h - ih) * 0.4; // matches object-position: 50% 40%
+  $$(".hero__spot").forEach((spot) => {
+    const x = ox + iw * +spot.dataset.x;
+    spot.style.left = x + "px";
+    spot.style.top = oy + ih * +spot.dataset.y + "px";
+    spot.classList.toggle("is-flip", x + 230 > w);
+  });
+};
+const heroImg = $(".hero__img");
+if (heroImg.complete) placeSpots(); else heroImg.addEventListener("load", placeSpots);
+
 document.fonts.ready.then(fitText);
 let fitRaf;
-window.addEventListener("resize", () => { cancelAnimationFrame(fitRaf); fitRaf = requestAnimationFrame(fitText); });
+window.addEventListener("resize", () => { cancelAnimationFrame(fitRaf); fitRaf = requestAnimationFrame(() => { fitText(); placeSpots(); }); });
 
 // ---------- Fallback when GSAP is unavailable ----------
 if (!window.gsap || !window.ScrollTrigger) {
@@ -41,8 +60,9 @@ if (!window.gsap || !window.ScrollTrigger) {
   document.documentElement.classList.add("no-js-anim");
   $$(".hero__char, .loader__word span, .reveal-line > span").forEach((el) => (el.style.transform = "none"));
   $(".hero__img-wrap").style.clipPath = "none";
-  $(".hero__img").style.transform = "none";
-  $$(".manifesto__text").forEach((el) => (el.style.opacity = 1));
+  $(".hero__layer").style.transform = "none";
+  $$(".hero__spot").forEach((el) => (el.style.opacity = 1));
+  $$(".manifesto__text .w, .manifesto__text").forEach((el) => (el.style.opacity = 1));
 } else {
   init();
 }
@@ -72,43 +92,56 @@ function init() {
     );
   }
 
-  // ---------- Loader ----------
+  // ---------- Loader (full intro only on the first visit of the session) ----------
   const counter = { v: 0 };
   const countEl = $(".loader__count");
   const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
+  let seen = false;
+  try { seen = sessionStorage.getItem("nord-intro") === "1"; sessionStorage.setItem("nord-intro", "1"); } catch {}
 
-  tl.to(".loader__word span", { y: 0, duration: 1.2, stagger: 0.06 }, 0.1)
-    .to(counter, {
-      v: 100, duration: 1.8, ease: "power2.inOut",
-      onUpdate: () => (countEl.textContent = String(Math.round(counter.v)).padStart(3, "0")),
-    }, 0)
-    .to(".loader__bar i", { scaleX: 1, duration: 1.8, ease: "power2.inOut" }, 0)
-    .to(".loader__word span", { y: "-105%", duration: 0.8, stagger: 0.04, ease: "expo.in" }, 1.9)
-    .to(".loader", { yPercent: -100, duration: 1.1, ease: "expo.inOut" }, 2.35)
-    .add(() => {
-      $(".loader").remove();
-      document.body.classList.remove("is-loading");
-      lenis?.start();
-    })
-    // Hero intro
-    .to(".hero__char", { y: 0, duration: 1.4, stagger: 0.07 }, 2.75)
-    .to(".hero__img-wrap", { clipPath: "inset(0% 0 0 0)", duration: 1.6, ease: "expo.inOut" }, 2.6)
-    .to(".hero__img", { scale: 1, duration: 2.2 }, 2.7)
-    .from(".hero__meta .reveal-line > span", { yPercent: 110, duration: 1, stagger: 0.08 }, 3)
-    .from(".hero__meta", { borderTopColor: "rgba(255,255,255,0)", duration: 1 }, 3)
-    .from(".hero__tag, .hero__lede, .hero__bottom .btn, .hero__scroll", { y: 24, opacity: 0, duration: 1.1, stagger: 0.08 }, 3.2)
-    .add(() => $(".nav").classList.remove("is-hidden"), 3.1);
+  const reveal = () => {
+    $(".loader")?.remove();
+    document.body.classList.remove("is-loading");
+    lenis?.start();
+  };
+  let at = 0.15;
+  if (seen) {
+    reveal();
+  } else {
+    tl.to(".loader__word span", { y: 0, duration: 1.1, stagger: 0.045 }, 0.1)
+      .to(counter, {
+        v: 100, duration: 1.5, ease: "power2.inOut",
+        onUpdate: () => (countEl.textContent = String(Math.round(counter.v)).padStart(3, "0")),
+      }, 0)
+      .to(".loader__bar i", { scaleX: 1, duration: 1.5, ease: "power2.inOut" }, 0)
+      .to(".loader__word span", { y: "-105%", duration: 0.7, stagger: 0.03, ease: "expo.in" }, 1.55)
+      .to(".loader", { yPercent: -100, duration: 1, ease: "expo.inOut" }, 1.95)
+      .add(reveal);
+    at = 2.25;
+  }
+
+  // Hero intro
+  tl.to(".hero__img-wrap", { clipPath: "inset(0% 0 0 0)", duration: 1.6, ease: "expo.inOut" }, at - 0.15)
+    .to(".hero__layer", { scale: 1, duration: 2.4 }, at - 0.05)
+    .to(".hero__char", { y: 0, duration: 1.3, stagger: 0.045 }, at + 0.2)
+    .from(".hero__meta .reveal-line > span", { yPercent: 110, duration: 1, stagger: 0.08 }, at + 0.45)
+    .from(".hero__lede, .hero__actions > *", { y: 22, opacity: 0, duration: 1.1, stagger: 0.08 }, at + 0.6)
+    .from(".hero__caption", { opacity: 0, duration: 1 }, at + 1)
+    .to(".hero__spot", { opacity: 1, duration: 0.8 }, at + 1.2)
+    .add(() => $(".nav").classList.remove("is-hidden"), at + 0.4);
 
   if (reduceMotion) tl.progress(1);
 
   // ---------- Hero scroll parallax ----------
-  gsap.to(".hero__media", {
-    yPercent: -30, ease: "none",
+  gsap.to(".hero__layer", {
+    yPercent: 6, ease: "none",
     scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
   });
-  gsap.to(".hero__title", {
-    yPercent: 18, ease: "none",
-    scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
+  gsap.matchMedia().add("(min-width: 901px)", () => {
+    gsap.to(".hero__content", {
+      y: -60, opacity: 0.2, ease: "none",
+      scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
+    });
   });
 
   // ---------- Nav state ----------
@@ -284,16 +317,6 @@ function init() {
       });
       el.addEventListener("mouseleave", () => { mx(0); my(0); });
     });
-
-    // Subtle hero image tilt
-    const media = $(".hero__media");
-    const hero = $(".hero");
-    hero.addEventListener("mousemove", (e) => {
-      const nx = e.clientX / window.innerWidth - 0.5;
-      const ny = e.clientY / window.innerHeight - 0.5;
-      gsap.to(".hero__img-wrap", { rotateY: nx * 8, rotateX: ny * -8, x: nx * 20, y: ny * 20, duration: 1.2, ease: "power3.out", transformPerspective: 900 });
-    });
-    media.style.willChange = "transform";
   }
 
   window.addEventListener("load", () => ScrollTrigger.refresh());

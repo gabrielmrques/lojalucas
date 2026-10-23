@@ -31,6 +31,7 @@
   </div>
 
   <!-- ============ UI CHROME ============ -->
+  <a href="#conteudo" class="skip mono">Pular pro conteúdo</a>
   <div class="grain" aria-hidden="true"></div>
   <div class="cursor" aria-hidden="true"><span class="cursor__label">Ver</span></div>
 
@@ -55,41 +56,45 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero">
-      <div class="hero__meta mono">
-        <span class="reveal-line"><span>(Inverno 26)</span></span>
-        <span class="reveal-line"><span>Coleção Concreto</span></span>
-        <span class="reveal-line"><span>Drop 004 — tá no ar</span></span>
+      <div class="hero__content">
+        <div class="hero__meta mono">
+          <span class="reveal-line"><span><i class="dot"></i> Drop 004 no ar</span></span>
+          <span class="reveal-line"><span>Coleção Concreto — Inverno 26</span></span>
+        </div>
+
+        <h1 class="hero__title js-fit" aria-label="NORD COMPANY">
+          <span class="hero__row" aria-hidden="true"><span class="hero__char">N</span><span class="hero__char">O</span><span class="hero__char">R</span><span class="hero__char">D</span></span>
+          <span class="hero__row" aria-hidden="true"><span class="hero__char">C</span><span class="hero__char">O</span><span class="hero__char">M</span><span class="hero__char">P</span><span class="hero__char">A</span><span class="hero__char">N</span><span class="hero__char">Y</span><span class="hero__char hero__mark">©</span></span>
+        </h1>
+
+        <p class="hero__lede">Roupa larga, tecido pesado e caimento do jeito que a rua pede.</p>
+
+        <div class="hero__actions">
+          <a href="loja.html" class="btn btn--big magnetic" data-cursor="Bora">
+            <span class="btn__fill"></span>
+            <span class="btn__text">Ver o drop</span>
+            <span class="btn__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a href="#lookbook" class="link-arrow">Lookbook <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
 
-      <div class="hero__media" data-cursor="Drop">
+      <figure class="hero__media">
         <div class="hero__img-wrap">
-          <img src="https://images.unsplash.com/photo-1547447134-cd3f5c716030?auto=format&fit=crop&w=1400&q=80" alt="Skate encostado no muro" class="hero__img" />
+          <div class="hero__layer">
+            <img src="assets/hero-nord.jpg" alt="Modelo de camiseta oversized preta e bermuda camuflada em frente a um muro de blocos de concreto" class="hero__img" fetchpriority="high" />
+            <a href="produto.html?id=tee-oversized-preta" class="hero__spot" data-x="0.53" data-y="0.34" aria-label="Ver Tee Oversized Breu, R$ 179">
+              <i aria-hidden="true"></i>
+              <span class="hero__spot-card"><b>Tee Oversized Breu</b><span class="mono">R$ 179</span></span>
+            </a>
+          </div>
         </div>
-        <span class="hero__tag mono">↳ Moletom Pesadão 480g — o queridinho da crew</span>
-      </div>
-
-      <h1 class="hero__title js-fit" aria-label="NORD COMPANY">
-        <span class="hero__char">N</span><span class="hero__char">O</span><span class="hero__char">R</span><span class="hero__char">D</span><span class="hero__char">&nbsp;</span><span class="hero__char">C</span><span class="hero__char">O</span><span class="hero__char">M</span><span class="hero__char">P</span><span class="hero__char">A</span><span class="hero__char">N</span><span class="hero__char">Y</span><span class="hero__char hero__mark">©</span>
-      </h1>
-
-      <div class="hero__bottom">
-        <p class="hero__lede">
-          <em>Roupa larga</em> pra quem vive na rua. Moletom que aguenta tombo, calça que deixa a perna respirar e camiseta que não encolhe na primeira lavada.
-        </p>
-        <a href="loja.html" class="btn btn--big magnetic" data-cursor="Bora">
-          <span class="btn__fill"></span>
-          <span class="btn__text">Bora pra loja</span>
-          <span class="btn__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <div class="hero__scroll mono">
-          <span>Desce</span>
-          <i></i>
-        </div>
-      </div>
+        <figcaption class="hero__caption mono"><span>Look 01</span><span>Toca no ponto pra comprar</span></figcaption>
+      </figure>
     </section>
 
     <!-- ============ MARQUEE ============ -->
-    <div class="marquee marquee--accent" aria-hidden="true">
+    <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
         <span>Frete na faixa acima de R$ 299</span><b>✦</b>
         <span>Pagou no Pix, ganhou 5%</span><b>✦</b>
@@ -105,29 +110,16 @@
     </div>
 
     <!-- ============ MANIFESTO ============ -->
-    <section class="manifesto">
-      <div class="manifesto__side mono">
-        <span>(01)</span>
-        <span>Papo reto</span>
-      </div>
+    <section class="manifesto" id="conteudo">
+      <span class="eyebrow mono">(01) — Manifesto</span>
       <p class="manifesto__text js-words">
-        A gente não liga pra tendência. Liga pra quem desce ladeira de shape, pega o busão das seis e faz do
-        <em>concreto</em> ponto de encontro. Por isso a roupa é larga, o tecido é pesado e o caimento é do jeito que a rua pede.
+        A gente não segue tendência. Faz roupa pra quem transforma o <em>concreto</em> em ponto de encontro.
       </p>
-      <div class="manifesto__stats">
-        <div class="stat">
-          <span class="stat__num"><span class="js-count" data-to="480">0</span><small>g</small></span>
-          <span class="stat__label mono">De moletom, sem frescura</span>
-        </div>
-        <div class="stat">
-          <span class="stat__num"><span class="js-count" data-to="100">0</span><small>%</small></span>
-          <span class="stat__label mono">Algodão de verdade</span>
-        </div>
-        <div class="stat">
-          <span class="stat__num"><span class="js-count" data-to="12">0</span><small>k+</small></span>
-          <span class="stat__label mono">Gente na crew</span>
-        </div>
-      </div>
+      <ul class="manifesto__facts">
+        <li><b><span class="js-count" data-to="480">0</span>g</b><span class="mono">Moletom</span></li>
+        <li><b><span class="js-count" data-to="100">0</span>%</b><span class="mono">Algodão</span></li>
+        <li><b><span class="js-count" data-to="12">0</span>k+</b><span class="mono">Na crew</span></li>
+      </ul>
     </section>
 
     <!-- ============ DROP (HORIZONTAL) ============ -->
