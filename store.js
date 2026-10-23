@@ -77,7 +77,7 @@ function renderChrome() {
         <div class="sh__actions">
           <button class="sh__icon" data-open="search" aria-label="Buscar" data-cursor="Busca">${I.search}</button>
           <a href="conta.html" class="sh__icon sh__hide-sm" aria-label="Minha conta" data-cursor="Conta">${I.user}</a>
-          <a href="loja.html?fav=1" class="sh__icon" aria-label="Favoritos" data-cursor="Curti">${I.heart}<i class="sh__count js-wish-count"></i></a>
+          <a href="loja.html?fav=1" class="sh__icon sh__hide-xs" aria-label="Favoritos" data-cursor="Curti">${I.heart}<i class="sh__count js-wish-count"></i></a>
           <button class="sh__icon sh__bag" data-open="cart" aria-label="Sacola" data-cursor="Sacola">${I.bag}<i class="sh__count js-cart-count"></i></button>
         </div>
       </header>`;

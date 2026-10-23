@@ -71,7 +71,7 @@ body.has-layer { overflow: hidden; }
 }
 .sh.is-scrolled { border-bottom-color: var(--line); }
 .sh.is-hidden { transform: translateY(-100%); }
-.sh__logo { font-size: 22px; font-weight: 900; font-variation-settings: "wdth" 125; letter-spacing: -0.045em; }
+.sh__logo { font-size: 22px; white-space: nowrap; font-weight: 900; font-variation-settings: "wdth" 125; letter-spacing: -0.045em; }
 .sh__logo sup { font-size: 0.45em; font-weight: 500; vertical-align: top; position: relative; top: 4px; margin-left: 1px; }
 .sh__nav { display: flex; gap: 28px; justify-content: center; }
 .sh__nav a { font-size: 13px; font-weight: 500; position: relative; }
@@ -850,4 +850,12 @@ body:has(.sh.is-hidden) .shop-bar { top: 0; }
   .drawer__head, .drawer__body, .drawer__foot { padding-left: 18px; padding-right: 18px; }
   .ship { padding: 12px 18px 0; }
   .toast { bottom: 80px; }
+}
+
+@media (max-width: 720px) {
+  .sh__logo { font-size: clamp(13px, 4.1vw, 20px); }
+  .sh__logo sup { top: 2px; }
+}
+@media (max-width: 400px) {
+  .sh__hide-xs { display: none; }
 }

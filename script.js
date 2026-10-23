@@ -7,16 +7,6 @@ const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
 
-// ---------- Clock (São Paulo) ----------
-const clock = $(".js-clock");
-const tick = () => {
-  clock.textContent = new Intl.DateTimeFormat("pt-BR", {
-    hour: "2-digit", minute: "2-digit", timeZone: "America/Sao_Paulo",
-  }).format(new Date());
-};
-tick();
-setInterval(tick, 15000);
-
 // ---------- Fit giant wordmarks to the viewport width ----------
 const fitText = () => {
   $$(".js-fit").forEach((el) => {
@@ -58,7 +48,7 @@ if (!window.gsap || !window.ScrollTrigger) {
   $(".loader")?.remove();
   $(".nav").classList.remove("is-hidden");
   document.documentElement.classList.add("no-js-anim");
-  $$(".hero__char, .loader__word span, .reveal-line > span").forEach((el) => (el.style.transform = "none"));
+  $$(".hero__char, .loader__word span, .reveal-line > span, .hero__by > span").forEach((el) => (el.style.transform = "none"));
   $(".hero__img-wrap").style.clipPath = "none";
   $(".hero__layer").style.transform = "none";
   $$(".hero__spot").forEach((el) => (el.style.opacity = 1));
@@ -109,12 +99,14 @@ function init() {
     reveal();
   } else {
     tl.to(".loader__word span", { y: 0, duration: 1.1, stagger: 0.045 }, 0.1)
+      .from(".loader__by > span", { yPercent: 110, duration: 1, ease: "expo.out" }, 0.55)
       .to(counter, {
         v: 100, duration: 1.5, ease: "power2.inOut",
         onUpdate: () => (countEl.textContent = String(Math.round(counter.v)).padStart(3, "0")),
       }, 0)
       .to(".loader__bar i", { scaleX: 1, duration: 1.5, ease: "power2.inOut" }, 0)
       .to(".loader__word span", { y: "-105%", duration: 0.7, stagger: 0.03, ease: "expo.in" }, 1.55)
+      .to(".loader__by > span", { yPercent: -110, duration: 0.6, ease: "expo.in" }, 1.6)
       .to(".loader", { yPercent: -100, duration: 1, ease: "expo.inOut" }, 1.95)
       .add(reveal);
     at = 2.25;
@@ -124,9 +116,8 @@ function init() {
   tl.to(".hero__img-wrap", { clipPath: "inset(0% 0 0 0)", duration: 1.6, ease: "expo.inOut" }, at - 0.15)
     .to(".hero__layer", { scale: 1, duration: 2.4 }, at - 0.05)
     .to(".hero__char", { y: 0, duration: 1.3, stagger: 0.045 }, at + 0.2)
-    .from(".hero__meta .reveal-line > span", { yPercent: 110, duration: 1, stagger: 0.08 }, at + 0.45)
-    .from(".hero__lede, .hero__actions > *", { y: 22, opacity: 0, duration: 1.1, stagger: 0.08 }, at + 0.6)
-    .from(".hero__caption", { opacity: 0, duration: 1 }, at + 1)
+    .from(".hero__by > span", { yPercent: 110, duration: 1.1 }, at + 0.55)
+    .from(".hero__lede, .hero__actions > *", { y: 22, opacity: 0, duration: 1.1, stagger: 0.08 }, at + 0.65)
     .to(".hero__spot", { opacity: 1, duration: 0.8 }, at + 1.2)
     .add(() => $(".nav").classList.remove("is-hidden"), at + 0.4);
 
@@ -215,13 +206,7 @@ function init() {
   const mm = gsap.matchMedia();
   const track = $(".drop__track");
   const bar = $(".js-drop-bar");
-  const idx = $(".js-drop-index");
-  const total = $$(".product", track).length;
-
-  const setProgress = (p) => {
-    bar.style.transform = `scaleX(${0.16 + p * 0.84})`;
-    idx.textContent = String(Math.min(total, Math.floor(p * total) + 1)).padStart(2, "0");
-  };
+  const setProgress = (p) => (bar.style.transform = `scaleX(${0.16 + p * 0.84})`);
 
   mm.add("(min-width: 901px)", () => {
     const distance = () => track.scrollWidth - window.innerWidth;
