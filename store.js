@@ -1,5 +1,5 @@
 /* =========================================================
-   CORRE® — loja (front-end de demonstração)
+   NORD COMPANY© — loja (front-end de demonstração)
    ========================================================= */
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -10,7 +10,7 @@ const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const FREE_SHIP = 299;
 const PIX_OFF = 0.05;
-const COUPONS = { CORRE10: 0.1, PRIMEIRACOMPRA: 0.15 };
+const COUPONS = { NORD10: 0.1, PRIMEIRACOMPRA: 0.15 };
 
 // ---------- Persistência (só no navegador de quem está vendo) ----------
 const db = {
@@ -60,7 +60,7 @@ function renderChrome() {
   const header = minimal
     ? `<header class="sh sh--min">
         <a href="loja.html" class="sh__back mono">${I.arrow} <span class="sh__hide-sm">Voltar pra loja</span></a>
-        <a href="index.html" class="sh__logo">CORRE<sup>®</sup></a>
+        <a href="index.html" class="sh__logo">NORD COMPANY<sup>©</sup></a>
         <span class="sh__secure mono">${I.lock} <span class="sh__hide-sm">Compra 100% segura</span></span>
       </header>`
     : `<div class="announce mono" aria-label="Avisos">
@@ -70,7 +70,7 @@ function renderChrome() {
       </div>
       <header class="sh">
         <button class="sh__icon sh__burger" data-open="menu" aria-label="Abrir menu">${I.menu}</button>
-        <a href="index.html" class="sh__logo" aria-label="CORRE início">CORRE<sup>®</sup></a>
+        <a href="index.html" class="sh__logo" aria-label="NORD COMPANY início">NORD COMPANY<sup>©</sup></a>
         <nav class="sh__nav" aria-label="Categorias">
           ${navLink("todos", "Tudo")}${navLink("moletons", "Moletons")}${navLink("camisetas", "Camisetas")}${navLink("calcas", "Calças")}${navLink("skate", "Skate")}
         </nav>
@@ -113,7 +113,7 @@ function renderChrome() {
 
     <nav class="mmenu" id="menu" aria-hidden="true">
       <div class="mmenu__head">
-        <a href="index.html" class="sh__logo">CORRE<sup>®</sup></a>
+        <a href="index.html" class="sh__logo">NORD COMPANY<sup>©</sup></a>
         <button class="sh__icon" data-close aria-label="Fechar menu">${I.close}</button>
       </div>
       <div class="mmenu__links">
@@ -169,9 +169,9 @@ function renderChrome() {
             <a href="#">Instagram</a><a href="#">TikTok</a><a href="#">YouTube</a>
           </div>
         </div>
-        <div class="sf__word" aria-hidden="true">CORRE<sup>®</sup></div>
+        <div class="sf__word" aria-hidden="true">NORD COMPANY<sup>©</sup></div>
         <div class="sf__bottom mono">
-          <span>© 2026 CORRE® — Faz teu corre</span>
+          <span>© 2026 NORD COMPANY© — Faz teu corre</span>
           <span class="sf__pay">Pix · Visa · Master · Elo · Boleto</span>
           <span>Feito na rua — São Paulo, SP</span>
         </div>
@@ -590,7 +590,7 @@ function pageCatalog() {
 // =========================================================
 function pageProduct() {
   const p = findProduct(params.get("id")) || PRODUCTS[0];
-  document.title = `${p.name} — CORRE®`;
+  document.title = `${p.name} — NORD COMPANY©`;
   const sel = { color: p.colors[0].name, size: null, qty: 1 };
   const firstAvail = p.sizes.filter((s) => !p.soldOut.includes(s));
   if (p.sizes.length === 1 && firstAvail.length) sel.size = firstAvail[0];
@@ -854,7 +854,7 @@ function pageCheckout() {
             <div class="paypane" data-pane="card">
               <div class="card-ui">
                 <div class="ccard">
-                  <div class="ccard__top"><span class="ccard__chip"></span><span class="ccard__brand mono js-cbrand">CORRE® card</span></div>
+                  <div class="ccard__top"><span class="ccard__chip"></span><span class="ccard__brand mono js-cbrand">NORD COMPANY© card</span></div>
                   <span class="ccard__num js-cnum">•••• •••• •••• ••••</span>
                   <div class="ccard__bot mono"><span class="js-cname">NOME NO CARTÃO</span><span class="js-cexp">MM/AA</span></div>
                 </div>
@@ -886,7 +886,7 @@ function pageCheckout() {
             <input placeholder="Tem cupom?" aria-label="Cupom" />
             <button type="submit">Aplicar</button>
           </form>
-          <p class="coupon__msg mono js-coupon-msg">Dica: testa <b>CORRE10</b></p>
+          <p class="coupon__msg mono js-coupon-msg">Dica: testa <b>NORD10</b></p>
           <div class="js-sum-totals"></div>
         </div>
         <div class="trust mono">
@@ -998,7 +998,7 @@ function pageCheckout() {
     const v = e.target.value;
     $(".js-cnum").textContent = (v + "•••• •••• •••• ••••".slice(v.length)).slice(0, 19);
     const d = v[0];
-    $(".js-cbrand").textContent = d === "4" ? "VISA" : d === "5" ? "MASTERCARD" : d === "6" ? "ELO" : d === "3" ? "AMEX" : "CORRE® card";
+    $(".js-cbrand").textContent = d === "4" ? "VISA" : d === "5" ? "MASTERCARD" : d === "6" ? "ELO" : d === "3" ? "AMEX" : "NORD COMPANY© card";
   });
   $(".js-card-name").addEventListener("input", (e) => ($(".js-cname").textContent = e.target.value.toUpperCase() || "NOME NO CARTÃO"));
   $(".js-card-exp").addEventListener("input", (e) => ($(".js-cexp").textContent = e.target.value || "MM/AA"));
@@ -1053,7 +1053,7 @@ function pageCheckout() {
             <div class="pix__info">
               <span class="mono">Paga com Pix — ${brl(order.total)}</span>
               <p>Abre o app do banco, escolhe Pix e escaneia o QR Code. Ou copia o código abaixo.</p>
-              <div class="pix__code mono"><span>00020126580014br.gov.bcb.pix0136corre-${order.id.toLowerCase()}</span><button class="js-copy">Copiar</button></div>
+              <div class="pix__code mono"><span>00020126580014br.gov.bcb.pix0136nord-${order.id.toLowerCase()}</span><button class="js-copy">Copiar</button></div>
               <span class="mono pix__timer">O código vale por 30 minutos</span>
             </div>
           </div>` : ""}
@@ -1087,7 +1087,7 @@ function pageAccount() {
         <div class="auth__art">
           <img src="${IMG(PHOTO.jacket, 1200)}" alt="" />
           <div class="auth__art-in">
-            <span class="mono">Crew CORRE®</span>
+            <span class="mono">Crew NORD COMPANY©</span>
             <h2>Faz parte<br /><em>da crew</em></h2>
             <ul class="mono">
               <li>✦ Fica sabendo dos drops antes</li>

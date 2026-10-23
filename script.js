@@ -1,5 +1,5 @@
 /* =========================================================
-   CORRE® — landing interactions
+   NORD COMPANY© — landing interactions
    ========================================================= */
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -95,7 +95,7 @@ function init() {
     .to(".hero__img-wrap", { clipPath: "inset(0% 0 0 0)", duration: 1.6, ease: "expo.inOut" }, 2.6)
     .to(".hero__img", { scale: 1, duration: 2.2 }, 2.7)
     .from(".hero__meta .reveal-line > span", { yPercent: 110, duration: 1, stagger: 0.08 }, 3)
-    .from(".hero__meta", { borderTopColor: "rgba(236,231,221,0)", duration: 1 }, 3)
+    .from(".hero__meta", { borderTopColor: "rgba(255,255,255,0)", duration: 1 }, 3)
     .from(".hero__tag, .hero__lede, .hero__bottom .btn, .hero__scroll", { y: 24, opacity: 0, duration: 1.1, stagger: 0.08 }, 3.2)
     .add(() => $(".nav").classList.remove("is-hidden"), 3.1);
 
